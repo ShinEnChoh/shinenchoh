@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Zen+Old+Mincho&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-shu-iro: #C04040;
+  --color-ruri-iro: #4A5C82;
+  --color-kin-iro: #B8860B;
+  --color-washi: #faf7f2;
+  --color-sumi: #3b3b3b;
+
+  --font-serif: 'Noto Serif JP', serif;
+  --font-mincho: 'Zen Old Mincho', serif;
+}
 
 body {
-  font-family: 'Noto Serif JP', serif;
-  background-color: #faf7f2;  /* 和紙のような柔らかい白 */
-  color: #3b3b3b;              /* 墨文字をイメージした濃いグレー */
+  font-family: var(--font-serif);
+  background-color: var(--color-washi);
+  color: var(--color-sumi);
 }
