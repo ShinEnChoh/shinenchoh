@@ -1,6 +1,3 @@
-console.log('=== MIDDLEWARE DEBUG ===')
-console.log('password:', process.env.PROTECTION_PASSWORD)
-
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
@@ -101,7 +98,7 @@ export async function middleware(request: NextRequest) {
 
     if (inputPassword === password) {
       // 認証成功 → Cookie を発行してリダイレクト
-      const response = NextResponse.redirect(new URL('/', request.url))
+      const response = NextResponse.redirect(new URL('/', request.url), { status: 303 })
       response.cookies.set('auth_token', password, {
         httpOnly: true,
         path: '/',
