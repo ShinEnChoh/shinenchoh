@@ -1,8 +1,5 @@
 import { supabase } from '@/lib/supabase'
-import dynamic from 'next/dynamic'
-
-// Leaflet は SSR できないため、dynamic import でクライアント専用に
-const ShrineMap = dynamic(() => import('@/components/ShrineMap'), { ssr: false })
+import ShrineMap from '@/components/ShrineMap'
 
 export default async function Home() {
   // 神様データ
