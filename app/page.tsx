@@ -59,7 +59,7 @@ export default function Home() {
               : 'text-sumi/50 border-transparent hover:text-sumi'
           }`}
         >
-          神々の図鑑
+          神名帳
         </button>
         <button
           onClick={() => setViewMode('map')}
@@ -69,7 +69,7 @@ export default function Home() {
               : 'text-sumi/50 border-transparent hover:text-sumi'
           }`}
         >
-          神々の地図
+          神跡帳
         </button>
       </div>
 
