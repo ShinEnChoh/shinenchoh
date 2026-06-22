@@ -5,7 +5,7 @@ import { supabase } from '@/lib/supabase'
 import ShrineMapWrapper from '@/components/ShrineMapWrapper'
 
 export default function Home() {
-  const [beings, setBeings] = useState([])
+  const [beings, setBeings] = useState<any[]>([])
   const [filter, setFilter] = useState('all')
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function Home() {
       if (filter === 'kunitsu') query = query.filter('attributes->>amatsu_kunitsu', 'eq', 'kunitsu')
       if (filter === 'human') query = query.filter('attributes->>is_human', 'eq', 'true')
       const { data } = await query
-      setBeings(data)
+      setBeings(data || [])
     }
     fetchBeings()
   }, [filter])
